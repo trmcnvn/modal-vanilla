@@ -554,7 +554,7 @@ var Modal = function (_EventEmitter) {
 
         if (o.animate) html.container.offsetWidth; // Force reflow
 
-        html.container.classList.add('in');
+        html.container.classList.add('show');
 
         setTimeout(function () {
           _this3._visible = true;
@@ -601,7 +601,7 @@ var Modal = function (_EventEmitter) {
 
       if (animate) html.backdrop.offsetWidth;
 
-      html.backdrop.classList.add('in');
+      html.backdrop.classList.add('show');
 
       setTimeout(function () {
         _this4.emit('showBackdrop', _this4);
@@ -618,8 +618,8 @@ var Modal = function (_EventEmitter) {
       var contCList = html.container.classList;
       this.emit('hide', this);
 
-      backCList.remove('in');
-      contCList.remove('in');
+      backCList.remove('show');
+      contCList.remove('show');
 
       this._removeEvents();
 
